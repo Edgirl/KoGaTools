@@ -20,8 +20,7 @@
   "content_scripts": [
     {
       "matches": ["*://www.kogama.com/*", "*://friends.kogama.com/*", "*://kogama.com.br/*"],
-      "js": ["content.js"],
-      "run_at": "document_end"
+      "js": ["content.js"]
     }
   ]
 }
