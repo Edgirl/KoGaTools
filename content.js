@@ -7,17 +7,20 @@ function changeGradientColor(color1, color2) {
     }
 }
 
-// Function to create and append a new icon to the ordered list in nav-menu
+// Function to create and append a new icon to the ordered list in nav-bar
 function addIconToNavMenu() {
-    const navMenu = document.getElementById('nav-menu'); // Select the element with ID nav-menu
-    if (navMenu) {
-        const orderedList = navMenu.querySelector('ol'); // Find the <ol> within nav-menu
+const navBar = document.getElementById('nav-bar');
+if (navBar) {
+    // Find the nested element with class '_1u05O'
+    const orderedList = navBar.querySelector('header > div > ._2mwlM > ._290sk > ._1u05O');
+console.log(orderedList);
         if (orderedList) {
             // Create a new list item
             const newItem = document.createElement('li');
-
+newItem.className = '_3RptD';
             // Create the link element
             const newLink = document.createElement('a');
+	    newLink.className = 'MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary';
             newLink.href = ''; // Set the href attribute as needed
 
             // Create the icon element
@@ -28,7 +31,7 @@ img.draggable = false;
             
             const spn = document.createElement('span');
             spn.textContent = 'Background';
-            spn.className = 'text';
+            spn.className = '_21Sfe';
 
             // Append the icon to the link
             newLink.appendChild(img);
