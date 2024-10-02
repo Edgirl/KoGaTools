@@ -12,8 +12,8 @@ function addIconToNavMenu() {
 const navBar = document.getElementById('nav-bar');
 if (navBar) {
     // Find the nested element with class '_1u05O'
-    const orderedList = navBar.querySelector('header > div > ._2mwlM > ._290sk > ._1u05O');
-console.log(orderedList);
+    const orderedList = navBar.querySelectorAll('._1u05O')[1];
+    const orderedList1 = navBar.querySelectorAll('._1u05O')[0];
         if (orderedList) {
             // Create a new list item
             const newItem = document.createElement('li');
@@ -49,6 +49,42 @@ img.draggable = false;
             // Append the new list item to the ordered list
             orderedList.appendChild(newItem);
         }
+        if (orderedList1) {
+            // Create a new list item
+            const newItem = document.createElement('li');
+newItem.className = '_3RptD';
+            // Create the link element
+            const newLink = document.createElement('a');
+	    newLink.className = 'MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary';
+            newLink.href = ''; // Set the href attribute as needed
+
+            // Create the icon element
+            const img = document.createElement('img');
+            img.src = 'https://i.ibb.co/tmRDY8L/settings-gear.png';
+img.draggable = false;
+            img.width = 20;
+            
+            const spn = document.createElement('span');
+            spn.textContent = 'Background';
+            spn.className = '_21Sfe';
+
+            // Append the icon to the link
+            newLink.appendChild(img);
+            newLink.appendChild(spn);
+
+            // Add click event to the link
+            newLink.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent the default anchor behavior
+                createAndShowDialog(); // Call the function to create and show the new div
+            });
+
+            // Append the link to the new list item
+            newItem.appendChild(newLink);
+            
+            // Append the new list item to the ordered list
+            orderedList1.appendChild(newItem);
+        }
+
     }
 }
 // Function to create and show a new div with fade-in effect
@@ -304,4 +340,6 @@ colorInput1.addEventListener('input', () => {
 const initialColor1 = localStorage.getItem('color1') || '#150e2f';
 const initialColor2 = localStorage.getItem('color2') || '#005e69';
 changeGradientColor(initialColor1, initialColor2);
-addIconToNavMenu();
+    setTimeout(() => {
+        addIconToNavMenu();
+    }, 400);
