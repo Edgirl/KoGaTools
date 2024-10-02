@@ -20,7 +20,28 @@
   "content_scripts": [
     {
       "matches": ["*://www.kogama.com/*", "*://friends.kogama.com/*", "*://kogama.com.br/*"],
-      "js": ["content.js"]
+      "js": ["content.js"],
+      "css": ["general.css"]
+    },
+{
+      "matches": [
+        "https://*.kogama.com/profile/*/",
+        "https://kogama.com.br/profile/*/",
+        "https://*.kogama.com/profile/*/edit/",
+        "https://kogama.com.br/profile/*/edit/",
+        "https://*.kogama.com/profile/*/?view_wall=1",
+        "https://kogama.com.br/profile/*/?view_wall=1",
+        "https://*.kogama.com/games/play/*/",
+        "https://kogama.com.br/games/play/*/",
+        "https://*.kogama.com/marketplace/*/*/",
+        "https://kogama.com.br/marketplace/*/*/",
+        "https://*.kogama.com/build/*/project/*/",
+        "https://kogama.com.br/build/*/project/*/",
+        "https://*.kogama.com/news/*/",
+        "https://kogama.com.br/news/*/"
+      ],
+      "js": ["textlimit.js"],
+      "css": ["text.css"]
     }
   ]
 }
