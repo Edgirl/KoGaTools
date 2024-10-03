@@ -11,8 +11,7 @@
   "permissions": [
     "storage",
     "scripting",
-    "webRequest",
-    "webRequestBlocking"
+    "webRequest"
   ],
   "host_permissions": [
     "*://www.kogama.com/*",
