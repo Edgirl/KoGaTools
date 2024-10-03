@@ -3,37 +3,10 @@ const MAX_LENGTH_MAP = {
     "comment": 1024,
     "description": 500
 };
-function createElement(tag, content, className) {
-    const element = document.createElement(tag);
-    if (className) {
-        element.className = className;
-    }
-    if (Array.isArray(content)) {
-        content.forEach(item => {
-            if (typeof item === 'string') {
-                element.appendChild(document.createTextNode(item));
-            } else if (item instanceof Node) {
-                element.appendChild(item);
-            }
-        });
-    }
-    return element;
-}
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
 function createCharacterCounter(characterLimit) {
-    return createElement("div", [
+    return createElement("div.kt-char-counter", [
         createElement("span", [`0 / ${characterLimit}`])
-    ], "kb-char-counter");
+    ]);
 }
 function createInputCounterHandler(characterLimit, characterCounter) {
     let isWarningDisplayed = false;
@@ -70,8 +43,8 @@ function createClickResetHandler(characterLimit, characterCounter, textarea) {
 document.addEventListener("click", ({ target }) => {
     if (
         target.tagName.toLowerCase() !== "textarea" ||
-        target.__KB_COUNTER_ATTACHED__ ||
-        (target.parentNode.classList.contains("_375XK") && !target.classList.contains("kb-chat-input-replacement"))
+        target.__kt_COUNTER_ATTACHED__ ||
+        (target.parentNode.classList.contains("_375XK") && !target.classList.contains("kt-chat-input-replacement"))
     ) return;
 
     const textareaForm = target.closest("form");
@@ -103,5 +76,5 @@ document.addEventListener("click", ({ target }) => {
             .addEventListener("click", createClickResetHandler(characterLimit, characterCounter, target));
     }
 
-    target.__KB_COUNTER_ATTACHED__ = true;
+    target.__kt_COUNTER_ATTACHED__ = true;
 });
