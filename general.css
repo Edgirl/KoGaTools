@@ -1,0 +1,428 @@
+/* kt NoChatLag Patch */
+.kt-chat-loading > p {
+	opacity: 0.7;
+}
+.kt-chat-error > p {
+	opacity: 0.7;
+	background-color: #f0808080 !important;
+	color: red !important;
+}
+._1j2Cd > p {
+	white-space: pre-line;
+}
+
+/* Status Indicator */
+.kt-status {
+	height: 48px;
+	margin-right: 4px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	cursor: pointer;
+	position: relative;
+}
+.kt-status-menu {
+	list-style-type: none;
+	background-color: #282b30;
+	border-radius: 5px;
+	
+	position: absolute;
+	right: -2px;
+	top: 90%;
+	width: 250px;
+	overflow: hidden;
+	
+	transition: transform 120ms ease-out;
+	transform-origin: top right;
+	transform: scale(0.1);
+	visibility: hidden;
+}
+.kt-status-menu.open {
+	transform: scale(1);
+	visibility: visible;
+}
+.kt-status-menu li {
+	padding: 10px 14px;
+	font-size: 15px;
+	line-height: 20px;
+	color: #fff9;
+}
+.kt-status-menu li:hover {
+	background-color: #25282d;
+	color: #fff;
+}
+.kt-status-menu li:first-of-type {
+	border-bottom: 1px solid #383b3f;
+	padding-top: 14px;
+}
+.kt-status-menu li:last-of-type {
+	padding-bottom: 14px;
+}
+.kt-status-menu svg {
+	margin-right: 10px;
+	position: relative;
+	top: 2px;
+}
+.kt-status-menu div {
+	color: #82919a;
+	font-size: 11px;
+	line-height: 12px;
+	margin: 4px 0 0 26px;
+}
+
+/* RichText Link Resolver Classes */
+.kt-rt-game:before {
+	content: "🎮";
+}
+.kt-rt-item:before {
+	content: "🛒";
+}
+.kt-rt-user:before {
+	content: "👤";
+}
+.kt-rt-news:before {
+	content: "📰";
+}
+
+/* RichText Links */
+.kt-rt-link {
+	color: #0b0c0f;
+}
+.description-container .kt-rt-link {
+	color: whitesmoke;
+}
+.kt-rt-link:hover {
+	color: #ff370f;
+}
+
+/* KoGaMotes */
+.kogamote {
+	display: inline-block;
+	float: none;
+	pointer-events: auto;
+	cursor: default;
+	min-width: 32px;
+	height: 32px;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	transform: translateY(.5rem);
+}
+ul.emote-list {
+	display: flex;
+	flex-wrap: wrap;
+	scrollbar-width: thin;
+}
+div.emote-img-container[data-original-title$=":"] {
+	box-shadow: 0 0 5px gold;
+	background-color: palegoldenrod;
+}
+img.emote-img[src*="/resources/emotes/"] {
+	max-height: 32px;
+	max-width: 32px;
+}
+.kogamote.deprecated {
+  opacity: 0.5;
+  filter: grayscale(75%) drop-shadow(0 0 5px red);
+}
+
+/* Spoiler Tag */
+.spoiler {
+	background-color: #202225;
+	color: transparent;
+	padding-left: 4px;
+	padding-right: 4px;
+	border-radius: 3px;
+	cursor: pointer;
+	display: inline-block;
+}
+.spoiler:hover {
+	background-color: #25262b;
+	color: transparent;
+}
+.spoiler::selection {
+	color: transparent;
+}
+.spoiler .kogamote {
+	visibility: hidden;
+}
+
+/* Blockquote */
+blockquote.quote {
+	margin: 0;
+	padding: 0 8px 0 12px;
+	position: relative;
+	white-space: pre-wrap;
+}
+blockquote.quote::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	width: 4px;
+	height: 100%;
+	border-radius: 4px;
+	background-color: #93959a;
+}
+blockquote.quote + br {
+	display: none;
+}
+blockquote.quote + br + blockquote.quote::before,
+blockquote.quote + blockquote.quote::before {
+	top: -30%;
+	height: 130%;
+}
+
+/* Code Block */
+code {
+	background-color: #bbbcbd55;
+	padding: 2px 4px;
+	border-radius: 3px;
+	line-height: 1.5rem;
+}
+pre {
+	border: 2px solid #2022254d;
+	border-radius: 5px;
+}
+pre > code {
+	display: block;
+	padding: 8px;
+	overflow-x: auto;
+}
+
+/* KoGaMa Style Fix: Notifications Tab Overflow */
+#notify-messages {
+	min-width: 200px;
+}
+#notify-messages .username {
+	display: inline-block;
+	vertical-align: top;
+	white-space: nowrap;
+	overflow-x: hidden;
+	text-overflow: ellipsis;
+	max-width: 100%;
+}
+.type-product-sold.has-product-image > .text,
+.type-product-sold.has-product-image > .time {
+	max-width: 170px;
+	padding-right: unset !important;
+}
+
+/* Fancy Scrollbars (FF64+ Only) */
+/* Friends List */
+._1Yhgq {
+	scrollbar-color: #414e59 #283540;
+}
+/* Notifications Tab */
+#notify .sections {
+	scrollbar-width: thin;
+	scrollbar-color: #64b6f7 #2196f3;
+}
+/* Profile Description */
+.description-container .text {
+	overflow-y: auto !important;
+	scrollbar-width: thin;
+	scrollbar-color: #414e59 #283540;
+}
+/* Recent Chats List */
+.zUJzi .uwn5j {
+	overflow-y: auto;
+	scrollbar-width: thin;
+	scrollbar-color: #414e59 #283540;
+}
+
+/* Translation Credit */
+.translation-credit {
+	margin-top: 15px;
+	margin-bottom: 5px;
+	margin-left: 2px;
+}
+.translation-credit span {
+	font-size: 14px;
+	margin-left: 6px;
+	vertical-align: top;
+	line-height: 16px;
+	font-weight: bold;
+}
+
+/* Data Management Container */
+.kt-data-container {
+	margin-top: 15px;
+	margin-bottom: 10px;
+	display: flex;
+}
+.kt-data-container button {
+	font-size: 14px;
+	border-radius: 15px;
+	flex: 1;
+	margin: 0 10px;
+	transition: 500ms;
+}
+.kt-data-container button:hover {
+	background-color: #30404d;
+	border-radius: 10px;
+}
+
+/* Success Notification*/
+ul.notifications li.success {
+	background-color: #8bc34ae6;
+}
+
+/* Hidden */
+.kt-hidden {
+	display: none !important;
+}
+
+/* Quality Screenshot */
+.kt-camera {
+	position: absolute;
+	opacity: 0.5;
+	z-index: 1;
+}
+.kt-camera:hover {
+	opacity: 0.75;
+}
+.kt-camera.marketplace {
+	right: 16px;
+	top: 5px;
+}
+.kt-camera.game {
+	right: 6px;
+	bottom: 5px;
+}
+.shop-name {
+	max-width: calc(100% - 50px);
+}
+/* TODO: Rework responsive styling */
+.authenticated .shop-name {
+	max-width: calc(100% - 48px);
+}
+@media screen and (max-width:378px) {
+  .kt-camera.game {
+    top: 160px;
+    right: 14px;
+    font-size: 22px;
+  }
+}
+
+#error-404-page {
+	flex: 1;
+}
+#root-page-mobile.error > footer {
+	background-image: linear-gradient(180deg,#283540 0,#161b1f);
+}
+
+#chat-extended-side {
+	height: calc(100% - 48px) !important;
+}
+#chat-extended-side.show {
+	top: 48px !important;
+}
+
+.kt-overlay-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: #0000004D;
+	z-index: 11;
+	display: grid;
+	place-items: center;
+}
+
+/* Desktop Screen */
+@media screen and (min-width: 1281px) {
+	.authenticated .kt-overlay-container {
+		width: calc(100vw - 300px);
+	}
+	/* Chat Toggle */
+	#navigation-chat-toggler {
+		display: block !important;
+	}
+}
+
+/* Item Count: KoGaMa Style Fixes */
+@media screen and (min-width: 1281px) {
+	#content.authenticated #pagesubheader {
+	  width: calc(100% - 300px);
+	}
+  }
+@media screen and (max-width:549px) {
+	#pagesubheader {
+		width: auto !important;
+		height: auto !important;
+	}
+	.submenu-container {
+		flex-direction: column;
+	}
+	.item-count-container {
+	  padding-left: 18px;
+	  align-self: unset !important;
+	}
+	.submenu-container > :first-child {
+	  margin: unset !important;
+	  padding-left: 12px !important;
+	}
+}
+.submenu-container {
+	display: flex;
+}
+.submenu-container > :first-child {
+	flex: 1;
+}
+/* Item Count: Container */
+.item-count-container {
+	align-self: center;
+	margin-right: 10px;
+	font-size: 14px;
+}
+.item-count-container span {
+	color: #6c747a;
+}
+.item-count-container a {
+	margin-left: 5px;
+}
+
+/* Character Counter */
+.kt-char-counter {
+	position: absolute;
+	right: 10px;
+	bottom: 4px;
+	font-size: 14px;
+	color: gray;
+}
+.error > .kt-char-counter {
+	color: #ca3c3c;
+}
+
+/* Chat Patch */
+#kt-chat-patch {
+	position: relative;
+}
+#kt-chat-patch > textarea {
+	width: 100%;
+}
+/* Word Break */
+._1j2Cd._1Xzzq {
+	word-break: normal !important;
+}
+
+/*
+    Game Card Thumbnail Fix
+
+    NOTE: Old games have had their thumbnails deleted.
+    This replaces the blank thumbnail with a default one.
+*/
+.game-image[style="background-image: url()"] {
+	background-image: url("/resources/images/missing-thumbnail.png") !important;
+}
+
+/*
+	Game Card Title Fix
+
+	NOTE: In rare cases (games without a proper name),
+	the game card will glitch.
+*/
+.game-name {
+	min-height: 46px;
+}

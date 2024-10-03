@@ -1,0 +1,48 @@
+/* KoGaMa Style Fix: Fixed Size Textarea */
+textarea {
+	resize: vertical;
+}
+textarea#status_message {
+	min-height: 50px;
+}
+textarea#comment {
+	min-height: 75px;
+}
+textarea#description {
+	min-height: 140px;
+}
+
+/* Preview Panel */
+.kt-preview-panel {
+	position: absolute;
+	top: calc(100% + 10px);
+	width: 100%;
+	height: 0;
+	max-height: 200px;
+	color: #333;
+	background-color: white;
+	border-radius: 8px;
+	transition: all 450ms;
+	overflow: hidden;
+	opacity: .5;
+	z-index: 1;
+}
+.kt-preview-panel > p {
+	margin: 0;
+	padding: 10px;
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+	scrollbar-width: thin;
+}
+textarea[kt-open]:focus ~ .kt-preview-panel,
+textarea[kt-open] ~ .kt-preview-panel:hover {
+	height: 125%;
+	opacity: 1;
+	box-shadow: 0 10px 15px 0 rgba(0,0,0,0.1);
+}
+
+/* Profile Description Form */
+#profile-edit form[action^="/user/"] .control-group:nth-child(2) {
+	position: relative;
+}
