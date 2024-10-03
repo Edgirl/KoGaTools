@@ -10,7 +10,9 @@
   "description": "Enjoy KoGaMa with a few improvements and features to the website! This extension was created by Edgirl Gaming Studios and is no way affiliated with Multiverse ApS",
   "permissions": [
     "storage",
-    "scripting"
+    "scripting",
+    "webRequest",
+    "webRequestBlocking"
   ],
   "host_permissions": [
     "*://www.kogama.com/*",
@@ -43,5 +45,8 @@
       "js": ["textlimit.js"],
       "css": ["text.css"]
     }
-  ]
+  ],  
+"content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  }
 }
