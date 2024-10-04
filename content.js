@@ -342,4 +342,4 @@ const initialColor2 = localStorage.getItem('color2') || '#005e69';
 changeGradientColor(initialColor1, initialColor2);
     setTimeout(() => {
         addIconToNavMenu();
-    }, 400);
+    }, 800);
