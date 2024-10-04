@@ -43,6 +43,23 @@
       ],
       "js": ["textlimit.js"],
       "css": ["text.css"]
+    },
+    {
+      "matches": [
+        "https://*.kogama.com/profile/*",
+        "https://kogama.com.br/profile/*"
+      ],
+      "exclude_matches": [
+        "https://*.kogama.com/profile/*/edit/",
+        "https://kogama.com.br/profile/*/edit/"
+      ],
+      "js": [
+        "profileUtils.js",
+        "lastPlayedGame.js"
+      ],
+      "css": [
+        "profile.css"
+      ]
     }
   ],  
 "content_security_policy": {
