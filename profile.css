@@ -1,0 +1,185 @@
+/* Shared Friends Tab */
+.shared-friends svg {
+	fill: hsla(0,0%,100%,.33) !important;
+}
+.shared-friends:hover svg {
+	fill: hsla(0,0%,100%,.83) !important;
+}
+.shared-friends span {
+	color: hsla(0,0%,100%,.33) !important;
+}
+.shared-friends:hover span {
+	color: hsla(0,0%,100%,.83) !important
+}
+
+/* KoGaMa Style Fix: Wrapping Badge List (Officially implemented as of October 22, 2020) */
+/* #profile-badges ul.badges {
+  flex-wrap: wrap !important;
+  position: unset !important;
+}
+#profile-badges {
+  width: auto !important;
+  height: auto !important;
+  margin-right: 32px;
+} */
+
+/* KoGaMa Style Fix: Unseen Badges take up equal amount of space */
+ul.badges > li.unseen {
+	flex-basis: 34px !important;
+}
+
+/* KoGaMa Style Fix: Missing Delete Post Button */
+a.destroy {
+  background: url("/resources/images/delete-button.png") no-repeat 0 0 !important;
+}
+a.destroy:hover {
+  background: url("/resources/images/delete-button.png") no-repeat 0 -20px !important;
+}
+
+/* KoGaMa Style Patch: Newlines in Feed Posts */
+li.status_updated div.feed-item,
+li.wall_post div.feed-item {
+	padding: 0 10px;
+}
+li.status_updated span.status-message,
+li.wall_post span.status-message {
+	padding: unset !important;
+	white-space: pre-line;
+}
+
+/* Profile Buttons: Responsive Design */
+.kt-profile-button a {
+	display: block;
+	width: 100%;
+}
+.kt-pb-container,
+.kt-inbound-container {
+	display: flex;
+}
+.kt-pb-container > div,
+.kt-inbound-container > div {
+	flex: 1;
+}
+.kt-inbound-container {
+	flex: 2 !important
+}
+@media screen and (min-width: 710px) {
+	.kt-profile-button {
+		position: absolute;
+		right: 44px;
+	}
+	.kt-pb-primary {
+		top: 34px;
+	}
+	.kt-pb-secondary {
+		top: 72px;
+	}
+	.kt-inbound-container > div:first-child {
+		margin-right: 5px;
+	}
+}
+
+/* Profile Buttons: Colors */
+.kt-switch-view > a {
+	background-color: #2196f3;
+}
+.kt-nuke-wall > a {
+	background-color: #ffd700;
+	color: #1c1c1c;
+}
+.kt-nuke-wall > a:hover {
+	color: #ff370f;
+}
+@media screen and (min-width: 1281px) {
+	.kt-nuke-wall > a {
+		line-height: 22px;
+		font-size: 16px;
+	}
+}
+.kt-favorite-friend > a {
+	background-color: #eaad00;
+}
+.kt-favorite-friend > a.is-favorite {
+	background-color: #e0841d;
+}
+.kt-cancel-pending > a {
+	background-color: #ff8a00;
+}
+.kt-accept-request > a {
+	background-color: #8bc34a;
+}
+.kt-reject-request > a {
+	background-color: hsla(0,0%,62%,.3);
+}
+
+/* Nuke Wall */
+.kt-nuke-wall-container {
+	background-color: gold;
+	color: #1c1c1c;
+	border-radius: 20px;
+	font-weight: bold;
+	font-size: 30px;
+	padding: 10px 30px;
+}
+@media screen and (min-width: 360px) {
+	.kt-nuke-wall-container {
+		font-size: calc(30px + 30 * ((100vw - 360px) / 350));
+	}
+}
+@media screen and (min-width: 710px) {
+	.kt-nuke-wall-container {
+		font-size: 60px;
+	}
+}
+
+.kt-nuke-loading {
+	display: inline-block;
+	animation: rotate 5s linear infinite;
+}
+@keyframes rotate {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/* Profile Banner */
+:root {
+	/* For Theme Creators: you can change this! */
+	--kt-banner-height: 40px;
+}
+.kt-profile-banner {
+	width: 100%;
+	height: var(--kt-banner-height);
+}
+.kt-profile-banner.top {
+	position: relative;
+	top: calc(var(--kt-banner-height) * -1);
+}
+.section-top.kt-pfb-top {
+	margin-top: var(--kt-banner-height) !important;
+}
+.kt-pfb-text {
+	margin: 0;
+	font-size: 25px;
+	font-weight: bold;
+	line-height: var(--kt-banner-height);
+	font-family: "Open Sans", sans-serif;
+	user-select: none;
+}
+.kt-pfb-text.light {
+	color: #F0F0F0;
+}
+.kt-pfb-text.dark {
+	color: #1c1e21;
+}
+.kt-pfb-text.left {
+	text-align: left;
+	padding-left: 15px;
+}
+.kt-pfb-text.center {
+	text-align: center;
+}
+.kt-pfb-text.right {
+	text-align: right;
+	padding-right: 15px;
+}
