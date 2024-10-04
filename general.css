@@ -413,9 +413,7 @@ ul.notifications li.success {
     NOTE: Old games have had their thumbnails deleted.
     This replaces the blank thumbnail with a default one.
 */
-.game-image[style="background-image: url()"] {
-	background-image: url("/resources/images/missing-thumbnail.png") !important;
-}
+.game-image[style="background-image: url()"] {}
 
 /*
 	Game Card Title Fix
