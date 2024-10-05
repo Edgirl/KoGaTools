@@ -1,5 +1,5 @@
 const MAX_LENGTH_MAP = {
-    "status_message": 160,
+    "status_messCage": 160,
     "comment": 1024,
     "description": 500
 };
@@ -41,12 +41,15 @@ function createClickResetHandler(characterLimit, characterCounter, textarea) {
 }
 // Event Listener
 document.addEventListener("click", ({ target }) => {
+        const textarea = document.querySelector("._375XK > textarea");
+        if (textarea) {
+            textarea.classList.add("kt-chat-input-replacement");
+        }
     if (
         target.tagName.toLowerCase() !== "textarea" ||
         target.__kt_COUNTER_ATTACHED__ ||
         (target.parentNode.classList.contains("_375XK") && !target.classList.contains("kt-chat-input-replacement"))
     ) return;
-
     const textareaForm = target.closest("form");
     const characterLimit = target.id === "description" ? 500 : MAX_LENGTH_MAP[target.id] || 256;
     const characterCounter = createCharacterCounter(characterLimit);
