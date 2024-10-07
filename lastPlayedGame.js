@@ -50,23 +50,31 @@ if (isClientProfile && isMainProfilePage && typeof localStorage.getItem("__ampli
             ])
         ])
     };
+    const storedData = localStorage.getItem("__amplify__cache:game:last-played");
+    // Check if storedData is not null before parsing
+    if (storedData) {
+        const parsedData = JSON.parse(storedData);
+        // Ensure that parsedData has a 'data' property
+        if (parsedData && parsedData.data) {
+            const gameData = parsedData.data;
 
-    const gameData = JSON.parse(localStorage.getItem("__amplify__cache:game:last-played")).data;
-    setTimeout(() => {
-    const parentElement = document.querySelector("._9smi2");
-    if (parentElement) {
-        parentElement.appendChild(
-            createElement("div.section-description", [
-                createElement("div.description-container", {
-                    style: "max-height: unset;"
-                }, [
-                    createElement("div.header", "Last Played Game"),
-                    createElement("ul.games-list", {
-                        style: "padding: 4px 10px 8px; margin: 0;"
-                    }, [createGameCard(gameData)])
-                ])
-            ])
-        );
+            setTimeout(() => {
+                const parentElement = document.querySelector("._9smi2");
+                if (parentElement) {
+                    parentElement.appendChild(
+                        createElement("div.section-description", [
+                            createElement("div.description-container", {
+                                style: "max-height: unset;"
+                            }, [
+                                createElement("div.header", "Last Played Game"),
+                                createElement("ul.games-list", {
+                                    style: "padding: 4px 10px 8px; margin: 0;"
+                                }, [createGameCard(gameData)])
+                            ])
+                        ])
+                    );
+                }
+            }, 800);
+        }
     }
-    }, 800);
 }
